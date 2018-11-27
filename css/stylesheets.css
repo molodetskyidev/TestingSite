@@ -23,10 +23,11 @@ padding:5px;
 .block {
 width:250px;
 margin:10px;
-paddign:20px 10px 10px 5px;
+paddign:20px 10px 10px 10px;
 float:left;
 border-style:solid;
 border-width:2px;
 border-color:#66b3ff;
+border-spacing: 15px;
 position:relative;
 }
