@@ -15,7 +15,7 @@ Simple HTML site
 <a class="navlink" href="#webtables">Web Tables</a>
 <a class="navlink" href="#switchexamples">Switch Examples</a>
 <a class="navlink" href="#iFrame">Frame Example</a>
-<a class="navlink" href="#mousework">Mouse Example</a>
+<a class="navlink" href="#other">Other Examples</a>
 <a class="navlink" href="../index.html">Back to Main page</a>
 </nav>
 </header>
@@ -71,15 +71,13 @@ Simple HTML site
 <h2>Web Tables Example</h2>
 <div class="block">
 <h3>Simple Table Example</h3>
-
 <table>
 <thead>
 <tr>
     <th>City</th>
     <th>Hotel name</th> 
     <th>Address</th>
-    <th>Price</th>
-    
+    <th>Price</th>    
   </tr>
   </thead>
   <tbody>
@@ -115,7 +113,6 @@ Simple HTML site
 <h3>Complicated Table Example</h3>
 <!-- TODO: make table fitting the block -->
 <table>
-
 <tr> 
     <th colspan="2">Date</th>
     <th rowspan="2">Number of persons</th>
@@ -171,6 +168,39 @@ Simple HTML site
   </tr>
 </table>
 </div>
+</section>
+<section id="switchexamples">
+<h2>Switch Example</h2>
+<div class="block">
+<h3>Switch Window Example</h3>
+<input type="button" value="Open window" onclick="openWindow()"/> 
+</div>
+<div class="block">
+<h3>Switch Tab Example</h3>
+<input type="button" value="Open tab" onclick="openTab()"/> 
+</div>
+<div class="block">
+<h3>Switch Alert/Confirm Example</h3>
+<input type="text" id="name" placeholder="Enter your name" />
+<input type="button" value="Alert" onclick="showAlert()"/> 
+<input type="button" value="Confirm" onclick="showConfirm()"/> 
+</div> 
+</section>
+<section id="iFrame">
+<h2>Frame Example</h2>
+<div class="block">
+<h3>Frame Example</h3>
+<iframe src="demo_iframe.html"></iframe>
+</div> 
+</section>
+<section id="other">
+<h2>Other Examples</h2>
+<div class="block">
+<h3>Mouse Example</h3>
+</div> 
+<div class="block">
+<h3>Element Displayed Example</h3>
+</div> 
 </section>
 </body>
 </html>
