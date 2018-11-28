@@ -6,8 +6,9 @@ Simple HTML site
 </title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <link href="../css/stylesheets.css" rel="stylesheet" />
+<script src="../scripts/simplehtml.js"></script>
 </head>
-<body>
+<body onload="setDates()">
 <header>
 <nav>
 <a class="navlink" href="#listexample">List/Checkboxes</a>
@@ -70,14 +71,18 @@ Simple HTML site
 <h2>Web Tables Example</h2>
 <div class="block">
 <h3>Simple Table Example</h3>
-<!-- TODO: make table fitting the block -->
+
 <table>
+<thead>
 <tr>
     <th>City</th>
     <th>Hotel name</th> 
     <th>Address</th>
     <th>Price</th>
+    
   </tr>
+  </thead>
+  <tbody>
   <tr>
   <td>Odessa</td>
   <td>Zirka</td>
@@ -102,6 +107,67 @@ Simple HTML site
   <td>Kolyba</td>
   <td>st. Stepana Bandery</td>
   <td>50$</td>
+  </tr>
+  </tbody>
+</table>
+</div>
+<div class="block blockextended">
+<h3>Complicated Table Example</h3>
+<!-- TODO: make table fitting the block -->
+<table>
+
+<tr> 
+    <th colspan="2">Date</th>
+    <th rowspan="2">Number of persons</th>
+    <th rowspan="2">City</th>
+    <th rowspan="2">Hotel name</th> 
+    <th rowspan="2">Address</th>
+    <th rowspan="2">Price</th>
+    <th rowspan="2">Total</th>
+  </tr>
+  <tr> 
+   <td>From: </td>
+   <td>To: </td>
+  </tr>
+  <tr> 
+   <td><input id="from0" type="date" value="2017-06-01"/></td> 
+   <td><input id="to0" type="date" value="2017-06-02"/></td>
+   <td><input id="number0" type="number" min="1" max="4" step="1" value="1"/></td>
+   <td>Odessa</td>
+   <td>Zirka</td>
+   <td>st. Vodoprovodna 1</td>
+   <td id="price0">10$</td> 
+   <td><input id="book" type="button" value="Calculate" onclick="calcPrice(0)"/>
+  </tr>
+  <tr> 
+   <td><input id="from1" type="date" value="2017-06-01"/></td> 
+   <td><input id="to1" type="date" value="2017-06-02"/></td>
+   <td><input id="number1" type="number" min="1" max="4" step="1" value="1"/></td>
+   <td>Odessa</td>
+  <td>Central</td>
+  <td>st. Preobrazhenska 10</td>
+  <td id="price1">40$</td> <!--TODO make it calculated =number*(to-from)*price -->
+   <td><input id="book" type="button" value="Calculate" onclick="calcPrice(1)"/>
+  </tr>
+  <tr> 
+   <td><input id="from2" type="date" value="2017-06-01"/></td> 
+   <td><input id="to2" type="date" value="2017-06-02"/></td>
+   <td><input id="number2" type="number" min="1" max="4" step="1" value="1"/></td>
+  <td>Kyiv</td>
+  <td>Reddison</td>
+  <td>st. Khreschatik 11</td>
+  <td id="price2">300$</td> <!--TODO make it calculated =number*(to-from)*price -->
+   <td><input id="book" type="button" value="Calculate" onclick="calcPrice(2)"/>
+  </tr>
+  <tr> 
+   <td><input id="from3" type="date" value="2017-06-01"/></td> 
+   <td><input id="to3" type="date" value="2017-06-02"/></td>
+   <td><input id="number3" type="number" min="1" max="4" step="1" value="1"/></td>
+  <td>Lviv</td>
+  <td>Kolyba</td>
+  <td>st. Stepana Bandery</td>
+  <td id="price3">50$</td> <!--TODO make it calculated =number*(to-from)*price -->
+   <td><input id="book" type="button" value="Calculate" onclick="calcPrice(3)"/>
   </tr>
 </table>
 </div>
