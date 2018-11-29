@@ -186,20 +186,33 @@ Simple HTML site
 <input type="button" value="Confirm" onclick="showConfirm()"/> 
 </div> 
 </section>
+
+<section id="other">
+<h2>Other Examples</h2>
+<div class="block">
+<h3>Element Displayed Example</h3>
+<input type="button" value="Show" onclick="showBtn()"/> 
+<input type="button" value="Hide" onclick="hideBtn()"/> 
+<input type="button" id="hideme" value="Show/Hide Example" onclick="showMsg('I am here!')"/> 
+</div> 
+<div class="block blockhigh"> 
+<h3>Mouse Example</h3>
+<p>Move the mouse over the button to open the dropdown menu.</p>
+<div class="dropdown">
+  <button class="dropbtn">Dropdown</button>
+  <div class="dropdown-content">
+    <a href="#">Link 1</a>
+    <a href="#">Link 2</a>
+    <a href="#">Link 3</a>
+  </div>
+</div>
+</div> 
+</section>
 <section id="iFrame">
 <h2>Frame Example</h2>
 <div class="block">
 <h3>Frame Example</h3>
 <iframe src="demo_iframe.html"></iframe>
-</div> 
-</section>
-<section id="other">
-<h2>Other Examples</h2>
-<div class="block">
-<h3>Mouse Example</h3>
-</div> 
-<div class="block">
-<h3>Element Displayed Example</h3>
 </div> 
 </section>
 </body>

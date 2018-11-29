@@ -19,12 +19,18 @@ function showAlert() {
 name=getName('name');
 window.alert('Hello, '+name);
 }
-function showMsg() {
-window.alert('Frame message');
+function showMsg(msg) {
+window.alert(msg);
 }
 function showConfirm(){
 name=getName('name');
 window.confirm('Hello, '+name);
+}
+function showBtn(){
+document.getElementById('hideme').style.display='inline';
+}
+function hideBtn(){
+document.getElementById('hideme').style.display='none';
 }
 function setDates() {
 //there can be a problem in case if month is changed between today and tomorrow
