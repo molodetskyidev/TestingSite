@@ -39,6 +39,7 @@ height:40%;
 section{
 clear: left;
 }
+
 table, th, td {
     width:inherit;
     border-width:2px;
