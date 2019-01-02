@@ -5,7 +5,7 @@ error_reporting(E_ALL);
  $username=check_data($_POST["login"]);
  $password=check_data($_POST["password"]);
  $db=new db();
- $conn=$db->init();
+ $conn=$db->initDb();
  $db->login($username,$password,$conn);
  echo "</br><a href='../html/login.html'>Back to Login page</a>";
  $db->closeConnection($conn);

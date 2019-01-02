@@ -5,7 +5,7 @@ class db { // start of class
    var $password = "r2d2";
    var $dbname = "loginregister";
    
-function init(){ //start of init function
+function initDb(){ //start of init function
      // Create connection
    $conn = new mysqli("localhost", "root", "r2d2","loginregister");
 
@@ -20,7 +20,7 @@ function init(){ //start of init function
    } //end of init function
    
 function login($username, $password,$conn){
-  // $sql = "SELECT * FROM USERS WHERE username='".$username."' AND password='".$password."';";
+  
   $sql = "SELECT * FROM USERS WHERE username='".$username."';";
    $result = mysqli_query($conn, $sql);
 if (mysqli_num_rows($result) > 0) {
@@ -63,6 +63,34 @@ if($result) {
 echo "There is an issue with closing connection</br>";
 }
 }
+
+function checkUsername($username,$conn){
+$sql = "SELECT * FROM USERS WHERE username='".$username."';";
+   $result = mysqli_query($conn, $sql);
+if (mysqli_num_rows($result) > 0) {
+return true;
+} else {
+return false;
+}
+}
+
+function registerUser($username, $password, $name, $surname, $sex, $date_of_birth, $date_of_registration, $email, $picture, $conn){
+$userexists=$this->checkUsername($username,$conn);
+if($userexists) {
+echo "User with username ".$username." already exists!</br>";
+echo "Please <a href='../html/register.html'>register</a> again and try another username.";
+} else {
+$sql = "INSERT INTO USERS(username,password,name,surname,sex,date_of_birth,date_of_registration,email,picture) VALUES ('".$username."', '".$password."', '".$name."', '".$surname."', '".$sex."', '".$date_of_birth."', '".$date_of_registration."', '".$email."', '".$picture."');";
+$result = mysqli_query($conn, $sql);
+if($result) {
+echo "user ".$username." is successfully registered!</br>";
+echo "Now you can <a href='../html/login.html'>login</a>";
+} else {
+echo "there was issue to register a user ".$sql;
+}
+}
+}
+
 
 } // end of class
 ?>
