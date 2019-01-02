@@ -1,0 +1,11 @@
+label{
+display:block;
+width:130px;
+float:left;
+}
+.rightaligned{
+margin-left:230px;
+}
+.small{
+font-size:10pt;
+}
