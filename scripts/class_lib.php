@@ -20,16 +20,21 @@ function init(){ //start of init function
    } //end of init function
    
 function login($username, $password,$conn){
-   $sql = "SELECT * FROM USERS WHERE username='".$username."' AND password='".$password."';";
+  // $sql = "SELECT * FROM USERS WHERE username='".$username."' AND password='".$password."';";
+  $sql = "SELECT * FROM USERS WHERE username='".$username."';";
    $result = mysqli_query($conn, $sql);
 if (mysqli_num_rows($result) > 0) {
- echo "<h2>User ".$username." is logged!</h2>";
- echo "<h3>Details:</h3>";
  while($row = mysqli_fetch_assoc($result)) {
+ $hashed_password=$row["password"];
+  if($hashed_password == crypt($password, $hashed_password)) {
+  echo "<h2>User ".$username." is logged!</h2>";
+  echo "<h3>Details:</h3>";
   echo "id: " . $row["user_id"]. "</br>username: " . $row["username"]. "</br>name: " . $row["name"]. "</br>surname: " . $row["surname"]. "</br>sex: ". $row["sex"]. "</br>date of birth: ". $row["date_of_birth"]."</br>date of registration: ". $row["date_of_registration"]."</br>email: ". $row["email"]."</br>picture: ". $row["picture"]."<br>";
+  } else {
+  echo "<h2>user or password is incorrect.</h2> Try to <a href='../html/login.html'>login</a> again with correct data or <a href='../html/register.html'>register!</a></h2>";
   }
   }
-  else {
+  } else {
     echo "<h2>user or password is incorrect.</h2> Try to <a href='../html/login.html'>login</a> again with correct data or <a href='../html/register.html'>register!</a></h2>";
 }
 echo "</br>";
